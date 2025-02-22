@@ -30,7 +30,7 @@
             margin-bottom: 10px;
         }
         .subtitle {
-            font-size: 1.5em; /* Reducimos el tamaño de la fecha */
+            font-size: 1.5em;
             color: #FFE4B5;
         }
         .date-time {
@@ -49,7 +49,7 @@
             margin: 10px;
             padding: 15px 30px;
             font-size: 1.2em;
-            background-color: #4169E1;
+            background-color: #4169E1; /* El mismo azul de los mapas */
             color: white;
             text-decoration: none;
             border-radius: 50px;
@@ -66,14 +66,14 @@
             display: inline-block;
             margin-top: 20px;
             padding: 15px 30px;
-            background-color: #28a745;
+            background-color: #4169E1; /* El mismo azul de los mapas */
             color: white;
             font-size: 1.2em;
             border-radius: 50px;
             text-decoration: none;
         }
         .calendar-button:hover {
-            background-color: #218838;
+            background-color: #191970;
         }
     </style>
 </head>
@@ -93,25 +93,33 @@
             Your browser does not support the audio element.
         </audio>
         
-        <!-- Botones para añadir al calendario -->
+        <!-- Botón único para añadir al calendario -->
         <div class="calendar-buttons">
-            <!-- Google Calendar -->
-            <a class="calendar-button" href="https://www.google.com/calendar/render?action=TEMPLATE&text=China's+Birthday&dates=20240329T230000Z/20240330T010000Z&details=Join+us+for+the+birthday+celebration!&location=Per%C3%BA+979%2C+B1641%2C+Acassuso%2C+Provincia+de+Buenos+Aires&sf=true&output=xml" target="_blank">
-                Add to Google Calendar
-            </a>
-            <!-- Apple Calendar -->
-            <a class="calendar-button" href="webcal://p01-calendars.icloud.com/published/2/XXXXXXXXXXXXXXX/XXXXXXX.ics" target="_blank">
-                Add to Apple Calendar
-            </a>
+            <a class="calendar-button" href="#" onclick="addToCalendar()">Add to Calendar</a>
         </div>
     </div>
 
     <script>
-        // Detect when the user clicks anywhere on the page
-        document.body.addEventListener('click', function() {
-            const audio = document.getElementById('birthday-audio');
-            audio.play().catch(error => console.log('Autoplay bloqueado:', error));
-        });
+        function addToCalendar() {
+            const eventName = "China's Birthday";
+            const eventDate = "20240329T230000Z"; // Fecha en formato UTC
+            const eventEnd = "20240330T010000Z"; // Fecha de fin en formato UTC
+            const eventLocation = "Perú 979, B1641 Acassuso, Provincia de Buenos Aires";
+            const eventDescription = "Join us for the birthday celebration!";
+            
+            // Google Calendar link (Android)
+            const googleCalendarURL = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventName)}&dates=${eventDate}/${eventEnd}&details=${encodeURIComponent(eventDescription)}&location=${encodeURIComponent(eventLocation)}&sf=true&output=xml`;
+
+            // Apple Calendar link (iPhone)
+            const appleCalendarURL = `webcal://p01-calendars.icloud.com/published/2/XXXXXXXXXXXXXXX/XXXXXXX.ics`; // Aquí debes poner el enlace a tu archivo .ics
+
+            // Detectamos el sistema operativo y redirigimos al calendario correspondiente
+            if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+                window.location.href = appleCalendarURL; // iOS
+            } else {
+                window.location.href = googleCalendarURL; // Android
+            }
+        }
     </script>
 </body>
 </html>
