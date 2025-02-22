@@ -30,7 +30,7 @@
             margin-bottom: 10px;
         }
         .subtitle {
-            font-size: 2em;
+            font-size: 1.5em; /* Reducimos el tamaño de la fecha */
             color: #FFE4B5;
         }
         .date-time {
@@ -62,6 +62,19 @@
         audio {
             display: none;
         }
+        .calendar-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            border-radius: 50px;
+            text-decoration: none;
+        }
+        .calendar-button:hover {
+            background-color: #218838;
+        }
     </style>
 </head>
 <body>
@@ -73,11 +86,24 @@
             <a href="https://maps.apple.com/?q=Per%C3%BA%20979,%20B1641%20Acassuso,%20Provincia%20de%20Buenos%20Aires" target="_blank">Apple Maps</a>
             <a href="https://maps.google.com/?q=Per%C3%BA%20979,%20B1641%20Acassuso,%20Provincia%20de%20Buenos%20Aires" target="_blank">Google Maps</a>
         </div>
+        
         <!-- Usamos la URL directa de GitHub para el archivo MP3 -->
         <audio id="birthday-audio" autoplay loop>
             <source src="ABBA.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
+        
+        <!-- Botones para añadir al calendario -->
+        <div class="calendar-buttons">
+            <!-- Google Calendar -->
+            <a class="calendar-button" href="https://www.google.com/calendar/render?action=TEMPLATE&text=China's+Birthday&dates=20240329T230000Z/20240330T010000Z&details=Join+us+for+the+birthday+celebration!&location=Per%C3%BA+979%2C+B1641%2C+Acassuso%2C+Provincia+de+Buenos+Aires&sf=true&output=xml" target="_blank">
+                Add to Google Calendar
+            </a>
+            <!-- Apple Calendar -->
+            <a class="calendar-button" href="webcal://p01-calendars.icloud.com/published/2/XXXXXXXXXXXXXXX/XXXXXXX.ics" target="_blank">
+                Add to Apple Calendar
+            </a>
+        </div>
     </div>
 
     <script>
