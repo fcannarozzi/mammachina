@@ -73,11 +73,18 @@
             <a href="https://maps.apple.com/?q=Per%C3%BA%20979,%20B1641%20Acassuso,%20Provincia%20de%20Buenos%20Aires" target="_blank">Apple Maps</a>
             <a href="https://maps.google.com/?q=Per%C3%BA%20979,%20B1641%20Acassuso,%20Provincia%20de%20Buenos%20Aires" target="_blank">Google Maps</a>
         </div>
-        <audio autoplay loop>
+        <audio id="birthday-audio" loop>
             <source src="./ABBA.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('birthday-audio');
+            document.body.addEventListener('click', () => {
+                audio.play();
+            }, { once: true });
+        });
+    </script>
 </body>
 </html>
-
