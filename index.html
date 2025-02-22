@@ -73,7 +73,7 @@
             <a href="https://maps.apple.com/?q=Per%C3%BA%20979,%20B1641%20Acassuso,%20Provincia%20de%20Buenos%20Aires" target="_blank">Apple Maps</a>
             <a href="https://maps.google.com/?q=Per%C3%BA%20979,%20B1641%20Acassuso,%20Provincia%20de%20Buenos%20Aires" target="_blank">Google Maps</a>
         </div>
-        <audio id="birthday-audio" loop>
+        <audio id="birthday-audio" autoplay loop muted>
             <source src="./ABBA.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
@@ -81,9 +81,8 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const audio = document.getElementById('birthday-audio');
-            document.body.addEventListener('click', () => {
-                audio.play();
-            }, { once: true });
+            audio.muted = false;
+            audio.play().catch(error => console.log('Autoplay bloqueado:', error));
         });
     </script>
 </body>
