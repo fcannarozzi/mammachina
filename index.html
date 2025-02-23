@@ -30,12 +30,12 @@
             margin-bottom: 10px;
         }
         .subtitle {
-            font-size: 1.5em;
+            font-size: 2em;
             color: #FFE4B5;
+            margin-bottom: 5px;
         }
         .date-time {
-            font-size: 1.5em;
-            margin: 20px 0;
+            font-size: 1.8em;
             color: #FFFACD;
         }
         .tagline {
@@ -45,17 +45,17 @@
             margin-bottom: 30px;
         }
         .buttons a {
-            display: inline-block;
-            margin: 10px;
+            display: block;
+            margin: 10px auto;
             padding: 15px 30px;
             font-size: 1.2em;
-            background-color: #4169E1; /* El mismo azul de los mapas */
+            background-color: #4169E1;
             color: white;
             text-decoration: none;
             border-radius: 50px;
             transition: background-color 0.3s;
             box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-            width: 250px; /* Asegura que todos los botones tengan el mismo tamaño */
+            width: 300px;
             text-align: center;
         }
         .buttons a:hover {
@@ -64,45 +64,33 @@
         audio {
             display: none;
         }
-        .calendar-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 15px 30px;
-            background-color: #4169E1; /* El mismo azul de los mapas */
-            color: white;
-            font-size: 1.2em;
-            border-radius: 50px;
-            text-decoration: none;
-            width: 250px; /* Asegura que todos los botones tengan el mismo tamaño */
-            text-align: center;
-        }
-        .calendar-button:hover {
-            background-color: #191970;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="title">China's Birthday</div>
-        <div class="subtitle">Saturday, March 29th — 11:00 PM</div>
+        <div class="subtitle">Saturday, March 29th</div>
+        <div class="date-time">11:00 PM — 5:00 AM (ARG time)</div>
         <div class="tagline">Here we go again...</div>
-        
-        <!-- Botón para añadir al calendario -->
-        <div class="buttons">
-            <a class="calendar-button" href="date.ics" target="_blank">Add to Calendar</a>
-        </div>
 
-        <!-- Botones de mapas -->
         <div class="buttons">
+            <a href="#" id="play-music">Press for Music & Magic!</a>
+            <a href="event.ics" download="ChinasBirthday.ics">Add to Calendar</a>
             <a href="https://maps.apple.com/?q=Per%C3%BA%20979,%20B1641%20Acassuso,%20Provincia%20de%20Buenos%20Aires" target="_blank">Apple Maps</a>
             <a href="https://maps.google.com/?q=Per%C3%BA%20979,%20B1641%20Acassuso,%20Provincia%20de%20Buenos%20Aires" target="_blank">Google Maps</a>
         </div>
-        
-        <!-- Usamos la URL directa de GitHub para el archivo MP3 -->
-        <audio id="birthday-audio" autoplay loop>
+
+        <audio id="birthday-audio" loop>
             <source src="ABBA.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
     </div>
+
+    <script>
+        document.getElementById('play-music').addEventListener('click', function() {
+            const audio = document.getElementById('birthday-audio');
+            audio.play().catch(error => console.log('Autoplay blocked:', error));
+        });
+    </script>
 </body>
 </html>
