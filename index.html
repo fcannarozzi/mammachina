@@ -5,61 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>China's Birthday</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Onest:wght@100..900&family=Wix+Madefor+Display:wght@400..800&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Onest:wght@100..900&family=Wix+Madefor+Display:wght@400..800&display=swap');
         
         body {
-            background: linear-gradient(to bottom, #87CEEB, #4682B4);
-            font-family: 'Libre Baskerville', serif;
+        
+            font-family: "Old Standard TT", serif;
             text-align: center;
-            color: #fff;
+            color:  #0B063A;
+            display: flex;
+            height: 100vh;
+            flex-direction: column;
+            align-items: flex-start;
+            background-image: url('img/background2.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
             margin: 0;
             padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
         .container {
-            padding: 40px 15px;
+            display: flex;
+            padding: 24px 24px 24px 24px;
+            flex-direction: column;
+            align-items: space-between;
+            flex: 1 0 0;
+            align-self: stretch;    
         }
-        .title {
-            font-size: 3.5em;
-            font-weight: bold;
-            letter-spacing: 2.5px;
-            text-shadow: 2px 2px 5px #2c3e50;
-            margin-bottom: 8px;
+        .text {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            gap: 16px;
+            flex: 1 0 0;
+            align-self: stretch;
         }
-        .subtitle {
-            font-size: 1.8em;
-            color: #FFE4B5;
-            margin-bottom: 4px;
+        h1 {
+        color: #0B063A;
+        text-align: center;
+        font-size: 64px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: -2.36px;
+        margin: 0;    
         }
-        .date-time {
-            font-size: 1.6em;
-            color: #FFFACD;
-        }
-        .tagline {
-            font-size: 2.2em;
-            font-style: italic;
-            color: #FFFAF0;
-            margin-bottom: 25px;
-        }
-        .buttons a {
-            display: block;
-            margin: 8px auto;
-            padding: 12px 25px;
-            font-size: 1.1em;
-            background-color: #4169E1;
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: background-color 0.3s;
-            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-            width: 280px;
+        h3 {
+            color: #0B063A;
             text-align: center;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin: 0;    
         }
+        .date {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-self: stretch;
+
+        }
+
+        
+        h2 {
+            color: #0B063A;
+            text-align: center;
+            font-size: 56px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+        p {
+            color: #0B063A;
+            text-align: center;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-self: stretch;
+            width: 100%;
+        }
+        .maps {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            align-self: stretch;
+        }
+
+        a {
+            display: flex;
+            font-family:'inter', sans-serif;
+            height: 48px;
+            padding: 8px 0px;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            align-self: stretch;
+            text-decoration: none;
+            border-radius: 100px;
+            background: rgba(255, 255, 255, 0.90);
+            backdrop-filter: blur(2px);
+            width: 100%;
+        }
+
+
         .buttons a:hover {
-            background-color: #191970;
+            background-color: #030317;
         }
         audio {
             display: none;
@@ -68,16 +127,25 @@
 </head>
 <body>
     <div class="container">
-        <div class="title">China is 28</div>
-        <div class="subtitle">Saturday, March 29th</div>
-        <div class="date-time">11:00 PM</div>
-        <div class="tagline">Here we go again...</div>
+        <a href="#" id="play-music">Press for Music & Magic!</a>
+
+
+        <div class="text">
+        <h1>CHINA IS 28</h1>
+        <div class="date">
+        <h3>Sat, March 29th</h3>
+        <h3>11:00 PM</h3>
+        </div>
+        <h2>Here we go again...</h2>
+        </div>
 
         <div class="buttons">
-            <a href="#" id="play-music">Press for Music & Magic!</a>
             <a href="date.ics" download="ChinasBirthday.ics">Add to Calendar</a>
+        <div class="maps">
             <a href="https://maps.apple.com/?q=Per%C3%BA%20979,%20B1641%20Acassuso,%20Provincia%20de%20Buenos%20Aires" target="_blank">Apple Maps</a>
             <a href="https://maps.google.com/?q=Per%C3%BA%20979,%20B1641%20Acassuso,%20Provincia%20de%20Buenos%20Aires" target="_blank">Google Maps</a>
+        </div>  
+            <p>Peru 979, Acassuso.</p>
         </div>
 
         <audio id="birthday-audio" loop>
