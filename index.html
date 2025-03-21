@@ -16,7 +16,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background-image: url('IMG/background2.jpg');
+            background-image: url('img/background2.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
@@ -32,8 +32,9 @@
             width: 90%;
             max-width: 500px;
             background: rgba(255, 255, 255, 0.3);
-            padding: 30px;
+            padding: 40px 30px;
             border-radius: 15px;
+            margin-top: 50px; /* Baja la invitación */
         }
         h1 {
             font-size: 40px;
@@ -52,14 +53,14 @@
         .buttons a {
             display: block;
             font-size: 18px;
-            padding: 12px;
-            margin: 8px 0;
-            border-radius: 25px;
+            padding: 8px; /* Reduce el padding */
+            margin: 6px 0;
+            border-radius: 20px;
             background: rgba(255, 255, 255, 0.90);
             text-decoration: none;
             color: #0B063A;
-            width: 100%;
-            max-width: 250px;
+            width: 80%; /* Reduce el tamaño de los botones */
+            max-width: 200px;
             text-align: center;
         }
         .maps {
@@ -70,8 +71,21 @@
         }
         .maps a {
             font-size: 18px;
-            width: 100%;
-            max-width: 250px;
+            width: 80%;
+            max-width: 200px;
+        }
+        .music-button {
+            display: block;
+            font-size: 18px;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.90);
+            text-decoration: none;
+            color: #0B063A;
+            width: 80%;
+            max-width: 220px;
+            text-align: center;
         }
         audio {
             display: none;
@@ -80,7 +94,7 @@
 </head>
 <body>
     <div class="container">
-        <a href="#" id="play-music" style="font-size: 18px;">Press for Music & Magic!</a>
+        <a href="#" id="play-music" class="music-button">Press for Music & Magic!</a>
         <h1>CHINA IS 28</h1>
         <h3>Sat, March 29th - 11:00 PM</h3>
         <h2>Here we go again...</h2>
